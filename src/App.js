@@ -9,9 +9,9 @@ const App=()=>{
     <>
     <h1>welcome to corporates!!!!!!</h1>
     {/*<Usestatecomp/>
-    <Useeffectcomp/>
+    <Useeffectcomp/> */}
     <Useparamscomp/>
-  */}
+ 
     <BrowserRouter>
        <Navigation/>
       <Routes>
