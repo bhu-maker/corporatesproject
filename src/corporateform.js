@@ -118,7 +118,7 @@ export const Corporateform=()=>
                             defaultValue=""
                             name="employees"
                             className="mb-3 form-control"
-                            onChange={calling}
+                            onChange={handlechange}
                             value={corp.employees}
                     />   
                     <InputLabel htmlFor="outlined-adornment-amount">Basic Salary</InputLabel>

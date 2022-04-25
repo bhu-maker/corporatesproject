@@ -16,11 +16,11 @@ const Corporateapp=()=>{
               <Route path="/postt" exact element={<Corporateform/>}></Route>
               <Route path="/gett" exact element={<Home/>}></Route>
               <Route path="/gett/:para" exact element={<Read/>}></Route>
-              <Route path="gett/up/id/:para" exact element={<Edit/>}></Route>
+              <Route path="gett/up/id/:para2" exact element={<Edit/>}></Route>
           </Routes>
         </BrowserRouter>
         </>
-    )
+    );
 }
 
 export default Corporateapp

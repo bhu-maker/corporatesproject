@@ -37,7 +37,6 @@ export const Home=()=>{
                                 <TableCell align="center">Corporate Basic Salary</TableCell>
                                 <TableCell align="center">Corporate Location</TableCell>
                                 <TableCell align="center">Corporate Rating</TableCell>
-
                             </TableRow>
                             </TableHead>
                             <TableBody>
@@ -47,7 +46,7 @@ export const Home=()=>{
                                 <TableCell align="center">{row.nature}</TableCell>
                                 <TableCell align="center">{row.opennings}</TableCell>
                                 <TableCell align="center">{row.employees}</TableCell>
-                                <TableCell align="center">{row.basic}</TableCell>
+                                <TableCell align="center">{row.salary}</TableCell>
                                 <TableCell align="center">{row.place}</TableCell>
                                 <TableCell align="center">{row.ratings}</TableCell>
                                 

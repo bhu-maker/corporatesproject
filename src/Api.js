@@ -23,7 +23,7 @@ export const updating = async(obj)=>{
 } 
 
 
-export const finding=async(para)=>{
-    const temp =await axios.get(`${link}/gett/id/${para}`)
+export const finding=async(para2)=>{
+    const temp =await axios.get(`${link}/gett/id/${para2}`)
     return temp;
 }

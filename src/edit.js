@@ -14,10 +14,10 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 
 export const Edit=()=>{
         
-        const{para}=useParams()       
+        const{para2}=useParams()       
         const[cor,corpfn]=useState({})
         const effectfn=async()=>{
-            const t=await finding(para)
+            const t=await finding(para2)
             corpfn(t.data)
              }
         
