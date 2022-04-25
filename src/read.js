@@ -13,7 +13,7 @@ import  { reading } from './Api';
 
 export const Read=()=>{
     const {para}=useParams()
-    const[cat,corpfn]=useState({})
+    const[corp,corpfn]=useState({})
     const heycall = async()=>{
         const t = await reading(para)
         corpfn(t.data)
@@ -30,22 +30,23 @@ export const Read=()=>{
         <card className="bg-warning col-lg-4 col-md-8 col-sm-12 shadow rounded-3">
         <CardContent>
             <Typography className="text-center text-primary"sx={{ fontSize: 30 }} color="text.secondary" gutterBottom>
-                {cat.org}
+                {corp.org}
             </Typography>
             <Typography variant="h5" component="div">
-               {cat.nature}    {cat.employees}
+               {corp.nature}    {corp.employees}
             </Typography>
             <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                {cat.opennings}
+                {corp.opennings}
             </Typography>
             <Typography variant="body2">
-                {cat.place}  {cat.ratings}
+                {corp.place}  {corp.ratings}
                 <br />
-                {cat.salary}
+                {corp.salary}
             </Typography>
            </CardContent>
             <CardActions>
-            <Button size="small">EDIT</Button>
+            {/*<Button size="small">EDIT</Button>*/}
+            <a href={`/gett/up/id/${corp.id}`} className='col-3 btn btn-outline-warning' >EDIT</a>
             <span className="col-4"></span>
             <Button size="small">DELETE</Button>
             </CardActions>

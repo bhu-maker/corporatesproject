@@ -3,6 +3,8 @@ import { BrowserRouter,Routes,Route } from "react-router-dom"
 import {Corporateform} from "./corporateform"
 import {Home} from './home'
 import {Read} from './read'
+import {Edit} from './edit'
+
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 const Corporateapp=()=>{
@@ -14,6 +16,7 @@ const Corporateapp=()=>{
               <Route path="/postt" exact element={<Corporateform/>}></Route>
               <Route path="/gett" exact element={<Home/>}></Route>
               <Route path="/gett/:para" exact element={<Read/>}></Route>
+              <Route path="gett/up/id/:para" exact element={<Edit/>}></Route>
           </Routes>
         </BrowserRouter>
         </>

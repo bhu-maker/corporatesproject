@@ -24,22 +24,13 @@ export const Corporateform=()=>
         "employees":0
     })
 
-    const calling=(obj)=>{
-        const{name,value}=obj.target
-        corpfn((oldobj)=>
-        {
-            return{
-                ...oldobj,
-                [name]:value
-            }
-        })
-    }
+   
     const submitting=async()=>{
         const t = await filling(corp)
         alert(JSON.stringify(t.data))
-        reset()
+        resetting()
     }
-    const reset=()=>{
+    const resetting=()=>{
         corpfn(()=>{
             return{
                 "org":"",
@@ -53,6 +44,16 @@ export const Corporateform=()=>
         })
 
     }
+
+     const handlechange=(obj)=>{
+         const{name,value}=obj.target
+         corpfn((oldobj)=>{
+             return{
+                 ...oldobj,
+                 [name]:value
+             }
+         })
+     }
     return(
         <>
         <div className='container-fluid'>
@@ -67,7 +68,7 @@ export const Corporateform=()=>
                         name="org"
                         className="mb-3 form-control"
                         value={corp.org}
-                        onChange={calling}                     
+                        onChange={handlechange}                     
                     />
                     <InputLabel id="demo-simple-select-helper-label">Organization Nature</InputLabel>
                             <Select
@@ -76,9 +77,10 @@ export const Corporateform=()=>
                            
                             label="Nature"
                             name="nature"
-                            value={corp.nature}
+                          
                             className="mb-3 form-select"
-                            onChange={calling}
+                            onChange={handlechange}
+                            value={corp.nature}
                            
                             >
                             <MenuItem value="Select Any Nature">
@@ -95,7 +97,7 @@ export const Corporateform=()=>
                             defaultValue=""
                             name="opennings"
                             className="mb-3 form-control"
-                            onChange={calling}
+                            onChange={handlechange}
                             value={corp.opennings}
                     />  
                      <TextField
@@ -105,7 +107,7 @@ export const Corporateform=()=>
                             defaultValue=""
                             name="place"
                             className="mb-3 form-control"
-                            onChange={calling}
+                            onChange={handlechange}
                             value={corp.place}
                             
                     />      
@@ -123,7 +125,7 @@ export const Corporateform=()=>
                         <OutlinedInput
                             id="outlined-adornment-amount"
                           
-                            onChange={calling}
+                            onChange={handlechange}
                             startAdornment={<InputAdornment position="start">$</InputAdornment>}
                             label="salary"
                             name="salary"
@@ -134,7 +136,7 @@ export const Corporateform=()=>
                         <OutlinedInput
                             id="outlined-adornment-amount"
                           
-                            onChange={calling}
+                            onChange={handlechange}
                             startAdornment={<InputAdornment position="start">$</InputAdornment>}
                             label="Ratings"
                             name="ratings"
@@ -143,7 +145,7 @@ export const Corporateform=()=>
                         />  
                         <div className='row justify-content-around mb-3 mt-3'>
                         <Button variant="outlined" color="info" className="col-3" onClick={submitting}><SwipeRightAltIcon/></Button>
-                        <Button variant="outlined" color="error" className="col-3"><SwipeLeftAltIcon/></Button>
+                        <Button variant="outlined" color="error" className="col-3" onClick={resetting}><SwipeLeftAltIcon/></Button>
 
                             
                         </div> 
